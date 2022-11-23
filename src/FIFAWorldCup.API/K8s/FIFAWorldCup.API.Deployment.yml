@@ -1,2 +1,23 @@
 ﻿apiVersion: apps/v1
 kind: Deployment
+metadata:
+  name: FifaWorldCupApi-Deployment
+  labels:
+    app: FifaWorldCupApi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: FifaWorldCupApi
+  template: #Pod
+    metadata:
+      labels:
+        app: FifaWorldCupApi
+    spec:
+      containers:
+        - name: fifa-world-cup-container
+          image: ""
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+              protcol: TCP
