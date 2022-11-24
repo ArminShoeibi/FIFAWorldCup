@@ -1,0 +1,13 @@
+﻿apiVersion: v1
+kind: Service
+metadata:
+  name: fifa.worldcup.api.service
+  labels:
+    app: FifaWorldCupApi
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+  selector:
+    app: FifaWorldCupApi
